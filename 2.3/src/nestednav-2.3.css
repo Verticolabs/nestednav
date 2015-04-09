@@ -1,0 +1,106 @@
+/* Main Menu Container */
+#nested-nav {
+    background: none repeat scroll 0 0 #EEEEEE;
+    position: absolute;
+    top: 40px;
+    z-index: 30000;
+    padding: 10px;
+    left: -100%;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#nested-nav .nested-trans, #nested-nav.nested-trans {
+    -moz-transition: all 0.5s cubic-bezier(.13,.99,.75,1.01) 0s;
+    -webkit-transition: all 0.5s cubic-bezier(.13,.99,.75,1.01) 0s;
+    transition: all 0.5s cubic-bezier(.13,.99,.75,1.01) 0s;
+}
+#nested-nav.nested-drawer-show {
+    left: 0;
+}
+
+/* Items, Carets, Links */
+#nested-nav .nested-item {
+    background: none repeat scroll 0 0 #DDDDDD;
+    color: #777777;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px 10px 10px 80px;
+    text-transform: uppercase;
+    position: relative;
+}
+#nested-nav .nested-caret,
+#nested-nav .nested-no-caret {
+    background: #CCCCCC;
+    padding: 0 10px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    line-height: 40px;
+    width: 40px;
+    font-size: 2em;
+    text-align:center;
+}
+#nested-nav .nested-item.nested-link {
+    padding: 0 10px;
+}
+#nested-nav a.nested-link {
+    color: #0088cc;
+    display: block;
+    margin-left: 70px;
+    padding: 10px 0;
+}
+
+
+/* Dropdown Containers */
+#nested-nav .nested-container {
+    color: #EEEEEE;
+    background: #C5C5C5;
+    font-weight: bold;
+    left: 5%;
+    padding: 0;
+    position: absolute;
+    text-transform: uppercase;
+    width: 90%;
+    z-index: 20000;
+    display:block;
+    top: -2000px;
+    -webkit-transform: translateZ(0);
+}
+#nested-nav .nested-container.nested-back {
+    z-index: 200;
+}
+#nested-nav .nested-container.nested-dropdown-show {
+    top: 0;
+}
+/* Dropdown Titles */
+#nested-nav .nested-container .nested-box-title {
+    background: #999999;
+    padding: 10px;
+    position: relative;
+}
+/* Dropdown Box */
+#nested-nav .nested-container  .nested-box {
+    background: #C5C5C5;
+}
+#nested-nav .nested-container .nested-box-close {
+    background: #888888;
+    border-radius: 100px;
+    padding: 10px;
+    position: absolute;
+    right: -10px;
+    text-align: center;
+    top: -10px;
+    width: 20px;
+}
+/* Carets in a Dropdown Box */
+#nested-nav .nested-container .nested-box .nested-caret {
+    background: #aaa;
+}
+#nested-nav .nested-container .nested-box .nested-no-caret {
+    background: #ccc;
+}

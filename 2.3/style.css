@@ -1,0 +1,148 @@
+body .btn {
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background: #999;
+    text-shadow: none;
+}
+body .btn:hover {
+    background: #ab86bd;
+}
+body .btn.btn-navbar {
+    background: #a883ba;
+    border:none;
+    box-shadow: none;
+}
+body .btn.btn-navbar .icon-bar {
+    box-shadow: none;
+}
+body .btn.btn-main {
+    background: #8d689f;
+    padding: 20px;
+    color: #fff;
+}
+body .btn.btn-main:hover {
+    background: #ab86bd;
+}
+body .navbar.navbar-inverse .navbar-inner {
+    border-radius: 0;
+    background: #666;
+    border: none;
+}
+body .navbar.navbar-inverse .navbar-inner a {
+    text-shadow: none;
+}
+body .navbar.navbar-inverse .nav-collapse > ul > li a {
+    color: #777;
+}
+body .navbar.navbar-inverse .nav-collapse > ul > li > a {
+    color: #fff;
+}
+body .navbar.navbar-inverse .navbar-inner .active a,
+body .navbar.navbar-inverse .navbar-inner a:hover,
+body .navbar.navbar-inverse .navbar-inner a:focus {
+    background: #888;
+    color: #fff;
+}
+body .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+body .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, 
+body .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle,
+body .navbar.navbar-inverse .navbar-inner .dropdown-submenu.open > a,
+body .navbar.navbar-inverse .navbar-inner .dropdown-submenu:hover > a,
+body .navbar.navbar-inverse .navbar-inner .dropdown-submenu:focus > a  {
+    background: #888;
+    color: #fff;
+}
+body .nav-collapse.in.collapse {
+    height: auto !important;
+}
+body {
+    color: #777;
+}
+.box-purple {
+    background: #ab86bd;
+    padding: 20px;
+    color: #fff;
+    border-bottom: 4px solid #8d689f;
+}
+.box-green {
+    background: #cbdb8f;
+    padding: 20px;
+    color: #fff;
+    border-bottom: 4px solid #9cab61;
+}
+.box-grey {
+    background: #999;
+    padding: 20px;
+    color: #fff;
+    border-bottom: 4px solid #777;
+}
+.switch-vs {
+    position:absolute;
+    right: 0;
+    top:0;
+}
+
+#docs table {
+    word-wrap: break-word;
+    table-layout: fixed;
+    width: 90%;
+    margin:auto;
+}
+
+@media (max-width: 800px) {
+    body {
+	padding: 0;
+    }
+    .page-header {
+	padding: 20px;
+    }
+    .icon-random {
+	font-size: 100px !important;
+	line-height:100px;
+    }
+    .icon-random:before {
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	transform:rotate(90deg);
+	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    }
+    .switch-vs {
+	position: static;
+	display:block;
+    }
+}
+
+/* modify nestednav css for theme purposes */
+#nested-nav {
+    background: #555;
+}
+#nested-nav .nested-item {
+    background: #666;
+    color: #555;
+}
+#nested-nav a.nested-link {
+    color: #a8b86c;
+}
+#nested-nav .nested-caret, #nested-nav .nested-no-caret {
+    background: #777;
+}
+#nested-nav .nested-container .nested-box,
+#nested-nav .nested-container {
+    background: #555;
+}
+#nested-nav .nested-container .nested-box-title {
+    background: #a8b86c;
+}
+#nested-nav .nested-container .nested-box-close {
+    background: #93a357;
+}
+#nested-nav .nested-container .nested-box .nested-no-caret {
+    background: #606060;
+}
+#nested-nav .nested-container .nested-box .nested-caret {
+    background: #444;
+    color: #a8b86c;
+}
