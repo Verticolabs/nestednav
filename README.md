@@ -26,9 +26,9 @@ The basic requirments are:
 | 7  | menuButtonSelector      | A uniquely identifiable selector for the mobile menu toggle button                                   | '.btn.btn-navbar'                         |
 | 8  | caretIconHtml           | HTML to make a caret icon or icon of choosing to denote dropdowns                                    | `'<i class="icon-caret-down"></i>'`       |
 | 9  | nestedBoxIconHtml       | HTML to make a remove icon or icon of choosing to denote CLOSE generated menu boxes                  | `'<i class="icon-remove"></i>'`           |
-| 10 | n/a                     | All links or dropdown labels MUST use an A tag, which is the only requirement, other than hierarchy. | `'<a href="your link">Link</a>'`          |
+| 10 | n/a                     | All links or dropdown labels MUST use an `<a>` tag, which is the only requirement, other than hierarchy. | `'<a href="your link">Link</a>'`          |
 
-### <a name="examples"></a> Basic Structure for Nested Nav 
+### Basic Structure for Nested Nav 
 
 Purely what is needed from Nested Nav, hierarchically speaking. (We're leaving out any unused Bootstrap markup.)
 
@@ -56,11 +56,11 @@ Purely what is needed from Nested Nav, hierarchically speaking. (We're leaving o
 Invoked with `$( '#main-nav' ).nestednav();`
 
 
-### Bootstrap 3.+ 
+### Bootstrap 3.+ *
 > \* removed dropdown-submenu, check [this stackoverflow solution](http://stackoverflow.com/a/18024991/2100636) for re-implementation and adjust nestednav options accordingly
 
     <div id="main-nav">
-        <ul>
+        <ul class="nav navbar-nav">
             <li><a href="#">Google</a></li>
             <li><a href="#">Yahoo</a></li>
             <li class="dropdown">
