@@ -4,6 +4,12 @@
 
 Works with Bootstrap 2.3 - 3+ or any markup that meets minimal, customizable requirements.
 
+### Download
+
+All nestednav JS and CSS files are in the `src` folder. You can also download them from [our demo page](http://www.verticolabs.com/plugins/nestednav/), but please do not link directly to them.
+
+### Demo
+
 For a working example, check out [our demo page](http://www.verticolabs.com/plugins/nestednav/) and be sure to resize your browser or use a mobile device!
 
 ### Overview 
