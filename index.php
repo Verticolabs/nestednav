@@ -59,7 +59,7 @@
 				<blockquote><em>"Turning nested desktop menus into user-friendly mobile menus."</em></blockquote>
                 <p>Works with Bootstrap 2.3 - 3.+ or any markup that meets minimal, customizable requirements.</p>
 				<button id="nestify23" class="btn btn-success btn-large visible-phone btn-block btn-main" type="button">nestednav-ify</button>
-				<a class="btn btn-success btn-large switch-vs" href="https://github.com/Verticolabs/nestednav#-basic-structure-for-nested-nav">Code Examples</a>
+				<a class="btn btn-success btn-large switch-vs" href="https://github.com/Verticolabs/nestednav#basic-structure-for-nested-nav">Code Examples</a>
 			</div>
 			<div class="text-center">
 				
