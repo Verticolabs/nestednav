@@ -7,12 +7,12 @@
 		
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" media="screen">
-		<link href="src/nestednav-2.3.css" rel="stylesheet">
+		<link href="src/nestednav.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
 		
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="src/jquery.nestednav-2.3.min.js"></script>
+		<script type="text/javascript" src="src/jquery.nestednav.min.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		
 	</head>
@@ -25,7 +25,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<a class="brand" href="#">VerticoLabs</a>
+					<a class="brand" href="http://www.verticolabs.com/">VerticoLabs</a>
 					<div class="nav-collapse">
 						<ul class="nav">
 							<li class="active"><a href="#">These</a></li>
@@ -55,10 +55,11 @@
 		</div>
 		<div class="container" id="docs">
 			<div class="page-header" style="position:relative;">
-				<h1>nestedNav 2.3</h1>
-				<p>A User-friendly Responsive Bootstrap (2.3) Menu</p>
+				<h1>nestedNav</h1>
+				<blockquote><em>"Turning nested desktop menus into user-friendly mobile menus."</em></blockquote>
+                <p>Works with Bootstrap 2.3 - 3.+ or any markup that meets minimal, customizable requirements.</p>
 				<button id="nestify23" class="btn btn-success btn-large visible-phone btn-block btn-main" type="button">nestednav-ify</button>
-				<a class="btn btn-success btn-large switch-vs" href="index.html">Bootstrap 3.0</a>
+				<a class="btn btn-success btn-large switch-vs" href="https://github.com/Verticolabs/nestednav">Code Examples</a>
 			</div>
 			<div class="text-center">
 				
@@ -70,8 +71,7 @@
 							<i class="icon-desktop icon-4x"></i>
 						</p>
 						<h3 class="text-center">Deep Desktop Menus</h3>
-						<p class="text-center">Some sites call for <strong>very nested</strong> menus. Bootstrap 
-							struggles to turn great desktop menus into great 
+						<p class="text-center">Some sites call for <strong>very nested</strong> menus. Nested menus tend to struggle in turning great desktop menus into great 
 							mobile menus. <strong>nestedNav</strong> addresses
 							that problem!
 						</p>
@@ -97,28 +97,28 @@
 			<div class="row-fluid">
 				<div class="span8">
 					<h2 class="text-center" style="margin-top:30px">Try it out, minimize your browser.</h2>
-					<p class="text-center">Test it without nestednav. Then test it with! Inspect the navbar on this page for typical Bootstrap 2.3 HTML structure.</p>
+                    <p class="text-center">Test it without nestednav. Check out <a href="https://github.com/Verticolabs/nestednav">our github page</a> for HTML examples.</p>
 					<div class="row-fluid">
 						<div class="span6">
 						    <p class="text-center">
-							<a href="src/jquery.nestednav-2.3.js" class="btn btn-large btn-block btn-main">Download jquery.nestedNav-2.3.js</a>
+							<a href="src/jquery.nestednav.js" class="btn btn-large btn-block btn-main">Download jquery.nestednav.js</a>
 						    </p>
 						</div>
 						<div class="span6">
 						    <p class="text-center">
-							<a href="src/jquery.nestednav-2.3.min.js" class="btn btn-large btn-block btn-main">Download jquery.nestedNav-2.3.min.js</a>
+							<a href="src/jquery.nestednav.min.js" class="btn btn-large btn-block btn-main">Download jquery.nestednav.min.js</a>
 						    </p>
 						</div>
 					</div>
 					<div class="row-fluid">
 						<div class="span6">
 						    <p class="text-center">
-							<a href="src/nestednav-2.3.css" class="btn btn-large btn-block btn-main">Download nestedNav-2.3.css</a>
+							<a href="src/nestednav.css" class="btn btn-large btn-block btn-main">Download nestednav.css</a>
 						    </p>
 						</div>
 						<div class="span6">
 						    <p class="text-center">
-							<a href="src/nestednav-2.3.min.css" class="btn btn-large btn-block btn-main">Download nestedNav-2.3.min.css</a>
+							<a href="src/nestednav.min.css" class="btn btn-large btn-block btn-main">Download nestednav.min.css</a>
 						    </p>
 						</div>
 					</div>
@@ -136,7 +136,7 @@ $('#selector').nestednav();
 				</div>
 			</div>
 			<hr/>
-            <h2>Options</h2>
+            <h2 id="options">Options</h2>
 			<div class="row-fluid">
 			    <table class="table table-bordered table-hover">
 				<thead>
@@ -151,61 +151,40 @@ $('#selector').nestednav();
 				<tbody>
                     <tr>
                         <td colspan="5">
-                            <h3 class="text-center">Offsets - Widths - Heights</h3>
+                            <h3 class="text-center">Classes [Bootstrap]</h3>
                         </td>
                     </tr>
-				    <tr>
-                        <td><strong>menuCollapseWidth</strong></td>
-                        <td>1000</td>
-                        <td>The breakpoint in pixels to use menu</td>
-                        <td></td>
-                        <td><i class="icon-ok"></i></td>
-				    </tr>
                     <tr>
-                        <td><strong>offsetMenu</strong></td>
-                        <td>40</td>
-                        <td>The offset in pixels from the top of the page to start the menu.</td>
+                        <td><strong>dropdownClass</strong></td>
+                        <td>'dropdown'</td>
+                        <td>Top level class used to denote there are dropdown menu items, by bootstrap.</td>
                         <td></td>
                         <td><i class="icon-ok"></i></td>
-				    </tr>
+                    </tr>
+                    <tr>
+                        <td><strong>dropdownSubMenuClass</strong></td>
+                        <td>'dropdown-submenu'</td>
+                        <td>Sub level class used to denote there are dropdown menu items, by bootstrap.</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+                    </tr>
                     
                     <tr>
                         <td colspan="5">
-                            <h3 class="text-center">Delays</h3>
+                            <h3 class="text-center">HTML</h3>
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>setHeightInitialDelay</strong></td>
-                        <td>300</td>
-                        <td>Delay to append only top level menu items before calculating height</td>
+                        <td><strong>caretIconHtml</strong></td>
+                        <td>'&lt;i class="icon-caret-down"&gt;&lt;/i&gt;'</td>
+                        <td>HTML used to symbolize the caret shape</td>
                         <td></td>
                         <td><i class="icon-ok"></i></td>
                     </tr>
                     <tr>
-                        <td><strong>setHeightDropdownDelay</strong></td>
-                        <td>550</td>
-                        <td>Delay to append only the current dropdown items before calculating height</td>
-                        <td></td>
-                        <td><i class="icon-ok"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong>hideDropdownDelay</strong></td>
-                        <td>550</td>
-                        <td>Delay to remove dropdown from DOM to account for transition fade out</td>
-                        <td></td>
-                        <td><i class="icon-ok"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong>showDropdownDelay</strong></td>
-                        <td>330</td>
-                        <td>Delay before adding transition class to ensure dropdown is in DOM.</td>
-                        <td></td>
-                        <td><i class="icon-ok"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong>nestedDrawerTransDelay</strong></td>
-                        <td>550</td>
-                        <td>Delay show and hide of drawer according to transition class time</td>
+                        <td><strong>nestedBoxIconHtml</strong></td>
+                        <td>'&lt;i class="icon-remove"&gt;&lt;/i&gt;'</td>
+                        <td>HTML used to symbolize the x or remove shape</td>
                         <td></td>
                         <td><i class="icon-ok"></i></td>
                     </tr>
@@ -250,26 +229,13 @@ $('#selector').nestednav();
                         <td></td>
                         <td><i class="icon-ok"></i></td>
                     </tr>
-                    
                     <tr>
-                        <td colspan="5">
-                            <h3 class="text-center">Classes [Bootstrap]</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>dropdownClass</strong></td>
-                        <td>'dropdown'</td>
-                        <td>Top level class used to denote there are dropdown menu items, by bootstrap.</td>
+                        <td><strong>offsetMenuTargetSelector</strong></td>
+                        <td>''</td>
+                        <td>Will use main nav to compute top offset in window, unless another target is specified. Re-calculated on window resize.</td>
                         <td></td>
                         <td><i class="icon-ok"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong>dropdownSubMenuClass</strong></td>
-                        <td>'dropdown-submenu'</td>
-                        <td>Sub level class used to denote there are dropdown menu items, by bootstrap.</td>
-                        <td></td>
-                        <td><i class="icon-ok"></i></td>
-                    </tr>
+				    </tr>
                     
                     <tr>
                         <td colspan="5">
@@ -363,26 +329,6 @@ $('#selector').nestednav();
                     
                     <tr>
                         <td colspan="5">
-                            <h3 class="text-center">HTML</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>caretIconHtml</strong></td>
-                        <td>'&lt;i class="icon-caret-down"&gt;&lt;/i&gt;'</td>
-                        <td>HTML used to symbolize the caret shape</td>
-                        <td></td>
-                        <td><i class="icon-ok"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong>nestedBoxIconHtml</strong></td>
-                        <td>'&lt;i class="icon-remove"&gt;&lt;/i&gt;'</td>
-                        <td>HTML used to symbolize the x or remove shape</td>
-                        <td></td>
-                        <td><i class="icon-ok"></i></td>
-                    </tr>
-                    
-                    <tr>
-                        <td colspan="5">
                             <h3 class="text-center">IDs</h3>
                         </td>
                     </tr>
@@ -420,6 +366,60 @@ $('#selector').nestednav();
                         <td></td>
                         <td><i class="icon-ok"></i></td>
                     </tr>
+                    
+                    <tr>
+                        <td colspan="5">
+                            <h3 class="text-center">Delays</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>setHeightInitialDelay</strong></td>
+                        <td>300</td>
+                        <td>Delay to append only top level menu items before calculating height</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+                    </tr>
+                    <tr>
+                        <td><strong>setHeightDropdownDelay</strong></td>
+                        <td>550</td>
+                        <td>Delay to append only the current dropdown items before calculating height</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+                    </tr>
+                    <tr>
+                        <td><strong>hideDropdownDelay</strong></td>
+                        <td>550</td>
+                        <td>Delay to remove dropdown from DOM to account for transition fade out</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+                    </tr>
+                    <tr>
+                        <td><strong>showDropdownDelay</strong></td>
+                        <td>330</td>
+                        <td>Delay before adding transition class to ensure dropdown is in DOM.</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+                    </tr>
+                    <tr>
+                        <td><strong>nestedDrawerTransDelay</strong></td>
+                        <td>550</td>
+                        <td>Delay show and hide of drawer according to transition class time</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="5">
+                            <h3 class="text-center">Offsets - Widths - Booleans - Misc</h3>
+                        </td>
+                    </tr>
+				    <tr>
+                        <td><strong>menuCollapseWidth</strong></td>
+                        <td>1000</td>
+                        <td>The breakpoint in pixels to use menu</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+				    </tr>
 				</tbody>
 			    </table>
 			</div>

@@ -35,6 +35,12 @@
 			}, timeout );
 		}
 
+		function setTopOffset ( vars ) {
+			var target = (settings.offsetMenuTargetSelector === '') ? $nav : $( settings.offsetMenuTargetSelector );
+			var targetOffset = target.offset();
+			var documentOffset = targetOffset.top + target.outerHeight();
+			vars.wrapper.offset( { top: documentOffset } );
+		}
 
 		function makeLink ( a ) {
 			var link = [];
@@ -130,6 +136,8 @@
 
 			vars.nav.prepend( vars.wrapper );
 
+			setTopOffset( vars );
+
 			setHeight( vars, settings.setHeightInitialDelay );
 		}
 
@@ -183,6 +191,8 @@
 							vars.wrapper.removeClass( settings.nestedDrawerShowClass ).hide();
 						}
 						storedWidth = width;
+						
+						setTopOffset( vars );
 					});
 					break;
 				case 'menu-btn':
@@ -267,10 +277,7 @@
 	};
 
 	$.fn.nestednav.defaults = {
-		// Offsets, width, height
-		menuCollapseWidth: 1000,
-		offsetMenu: 40,
-
+		
 		// Delays
 		setHeightInitialDelay: 300,
 		setHeightDropdownDelay: 550,
@@ -283,7 +290,8 @@
 		mainNavSelector: '.navbar-inner ul.nav',
 		dropdownSelector: 'ul', // the element, perhaps a ul, that contains dropdown menu items.
 		mainNavChildrenSelector: 'li', // must have a elements inside
-		subNavChildrenSelector: 'li', // must have a elements inside
+		subNavChildrenSelector: 'li', // must have a elements inside,
+		offsetMenuTargetSelector: '', // will compute window offset of main nav unless otherwise specified
 
 		// Classes - Normal Navigation (Bootstrap)
 		dropdownClass: 'dropdown', // Top Level
@@ -313,11 +321,14 @@
 
 		// Attribute Objects
 		wrapperAttr: {
-			class : 'nested-nav hide'
+			class : 'nested-nav nested-hide'
 		},
 		backdropAttr: {
 			class: 'modal-backdrop fade in'
-		}
+		},
+		
+		// Widths, Booleans, Misc
+		menuCollapseWidth: 1000
 	};
 
 })( jQuery );
