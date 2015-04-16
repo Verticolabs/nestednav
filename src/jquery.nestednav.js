@@ -36,7 +36,7 @@
 		}
 
 		function setTopOffset ( vars ) {
-			var target = (settings.offsetMenuTargetSelector === '') ? $nav : $( settings.offsetMenuTargetSelector );
+			var target = (settings.offsetMenuTargetSelector === '') ? vars.nav : $( settings.offsetMenuTargetSelector );
 			var targetOffset = target.offset();
 			var documentOffset = targetOffset.top + target.outerHeight();
 			vars.wrapper.offset( { top: documentOffset } );
