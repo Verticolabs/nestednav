@@ -1,6 +1,6 @@
 ## Nested Nav
 
-! Released April 2015 !
+Licensed under the MIT license
 
 Works with Bootstrap 2.3 - 3+ or any markup that meets minimal, customizable requirements.
 
