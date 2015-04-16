@@ -187,9 +187,9 @@
 							vars.wrapper.css('height', vars.document.height()+'px');
 							vars.wrapper.removeClass( settings.nestedDrawerShowClass ).show();
 						} else {
-							vars.wrapper.find( '#' + settings.backdropID).add( settings.nestedDropdownContainerClass ).remove();
 							vars.wrapper.removeClass( settings.nestedDrawerShowClass ).hide();
 						}
+						vars.wrapper.find( '#' + settings.backdropID).add( '.' + settings.nestedDropdownContainerClass ).remove();
 						storedWidth = width;
 						
 						setTopOffset( vars );
