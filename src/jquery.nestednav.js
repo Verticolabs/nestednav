@@ -48,7 +48,8 @@
 			link.text = a.text();
 			link.hrefText = a.attr('href');
 			link.href = (link.hrefText === undefined || link.hrefText === 'javascript:void(0);') ? '' : link.hrefText;
-			link.html = (link.href.length) ? '<a class="' + settings.nestedItemLinkClass + '"' + 'href="' + link.href + '">' + link.text + '</a>' : link.text;
+			link.html = (link.href.length) ? '<a class="' + settings.nestedItemLinkClass + '"' + 'href="' + link.href + '">' + link.text + '</a>' 
+			: '<div class="' + settings.nestedItemNoLinkClass + '">' + link.text + '</div>';
 
 			return link;
 		}
@@ -84,13 +85,27 @@
 				// Add IDs to match new menu links to sub navs.
 				a.attr('data-label', dropID);
 				sub.attr('data-dropdown', dropID);
-
+				
 				html += item.html;
 			});
 
 			var els = $(html);
-
-			callEvent( els.find( '.' + settings.caretClass ), 'nested-caret', vars );
+			
+			
+			// allows the linkless nav item to also trigger the dropdown, not just the caret.
+			if ( settings.linklessTriggers ) {
+				els.find( '.' + settings.nestedItemNoLinkClass ).each(function(){
+					var el = $(this);
+					var dropdownEl = el.closest( '.' + settings.nestedItemClass ).find('[data-dropdown]');
+					
+					// Make sure there's even a dropdown to map it to.
+					if (dropdownEl.length) {
+						el.attr('data-dropdown', dropdownEl.attr('data-dropdown'));
+					}
+				});
+			}
+			
+			callEvent( els.find( '[data-dropdown]' ) , 'nested-caret', vars );
 
 			return els;
 		}
@@ -300,6 +315,7 @@
 		// Classes - Nested Nav (Generated)
 		nestedItemClass: 'nested-item',
 		nestedItemLinkClass: 'nested-link', // applied to nested a's and their parents, style accordingly.
+		nestedItemNoLinkClass: 'nested-no-link', // applied to items without links, style accordingly.
 		showDropdownClass: 'nested-dropdown-show',
 		nestedDrawerShowClass: 'nested-drawer-show',
 		nestedDropdownContainerClass: 'nested-container',
@@ -328,7 +344,8 @@
 		},
 		
 		// Widths, Booleans, Misc
-		menuCollapseWidth: 1000
+		menuCollapseWidth: 1000,
+		linklessTriggers: true // whether linkless nav items should also trigger dropdowns.
 	};
 
 })( jQuery );

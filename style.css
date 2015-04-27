@@ -126,6 +126,9 @@ body {
 #nested-nav a.nested-link {
     color: #a8b86c;
 }
+#nested-nav .nested-no-link {
+    color: #999999;
+}
 #nested-nav .nested-caret, #nested-nav .nested-no-caret {
     background: #777;
 }

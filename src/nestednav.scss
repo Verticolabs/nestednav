@@ -1,0 +1,159 @@
+// General
+$nested-nav-bg: #eee;
+$nested-nav-font-weight: bold;
+$nested-nav-top: 40px;
+$nested-nav-padding: 10px;
+
+// Nav Items
+$nested-nav-item-bg: #ddd;
+$nested-nav-item-color: #777;
+$nested-nav-item-font-size: 13px;
+$nested-nav-item-margin: 5px;
+$nested-nav-item-padding-left: 15%;
+$nested-nav-item-text-transform: uppercase;
+
+// Carets
+$nested-nav-caret-bg: #ccc;
+$nested-nav-caret-padding: 0 3%;
+$nested-nav-caret-line-height: 40px;
+$nested-nav-caret-width: 7%;
+$nested-nav-caret-font-size: 2em;
+$nested-nav-caret-text-align: center;
+
+// Links
+$nested-nav-link-color: #0088cc;
+$nested-nav-link-padding: 10px 0;
+
+// Containers
+$nested-nav-container-color: #eee;
+$nested-nav-container-bg: #c5c5c5;
+$nested-nav-box-title-bg: #999;
+$nested-nav-box-title-padding: 10px;
+$nested-nav-box-caret-bg: #aaa;
+$nested-nav-box-no-caret-bg: #ccc;
+$nested-nav-close-bg: #888;
+
+// Misc
+$nested-nav-transition: all 0.5s cubic-bezier(.13,.99,.75,1.01) 0s;
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+@mixin box-sizing($property) {
+    box-sizing: $property;
+    -moz-box-sizing: $property;
+    -webkit-box-sizing: $property;
+}
+
+// Suggestion: Don't edit beyond this point
+/*!
+ * CSS Nested Nav
+ * Original author: @amurrell
+ * Licensed under the MIT license
+ */
+
+.nested-hide {
+    display: none;
+}
+
+.nested-nav {
+    background: $nested-nav-bg;
+    position: absolute;
+    top: $nested-nav-top;
+    z-index: 30000;
+    padding: $nested-nav-padding;
+    left: -100%;
+    width: 100%;
+    display: block;
+    @include box-sizing(border-box);
+    
+    &.nested-trans {
+	@include transition($nested-nav-transition);
+    }
+    &.nested-drawer-show {
+	left: 0;
+    }
+    .nested-trans {
+	@include transition($nested-nav-transition);
+    }
+    .nested-item  {
+	background: $nested-nav-item-bg;
+	color: $nested-nav-item-color;
+	font-size: $nested-nav-item-font-size;
+	font-weight: $nested-nav-font-weight;
+	margin: $nested-nav-item-margin;
+	padding-left: $nested-nav-item-padding-left;
+	text-transform: $nested-nav-item-text-transform;
+	position: relative;
+    }
+    .nested-caret {
+	background: $nested-nav-caret-bg;
+	padding: $nested-nav-caret-padding;
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 100%;
+	line-height: $nested-nav-caret-line-height;
+	width: $nested-nav-caret-width;
+	font-size: $nested-nav-caret-font-size;
+	text-align: $nested-nav-caret-text-align;
+    }
+    .nested-no-caret {
+	@extend .nested-caret;
+    }
+    a.nested-link {
+	color: $nested-nav-link-color;
+	display: block;
+	padding: $nested-nav-link-padding;
+    }
+    .nested-no-link {
+	padding: $nested-nav-link-padding;
+    }
+    .nested-container {
+	color: $nested-nav-container-color;
+	background: $nested-nav-container-bg;
+	font-weight: $nested-nav-font-weight;
+	left: 5%;
+	padding: 0;
+	position: absolute;
+	width: 90%;
+	z-index: 20000;
+	display: block;
+	top: -2000px; //animates from top
+	-webkit-transform: translateZ(0);
+	&.nested-back {
+	    z-index: 200;
+	}
+	&.nested-dropdown-show {
+	    top: 0;
+	}
+	.nested-box-title {
+	    background: $nested-nav-box-title-bg;
+	    padding: $nested-nav-box-title-padding;
+	    position: relative;
+	}
+	.nested-box {
+	    background: $nested-nav-container-bg;
+	    .nested-caret {
+		background: $nested-nav-box-caret-bg;
+	    }
+	    .nested-no-caret {
+		background: $nested-nav-box-no-caret-bg;
+	    }
+	}
+	.nested-box-close {
+	    background: $nested-nav-close-bg;
+	    border-radius: 100px;
+	    padding: 10px;
+	    position: absolute;
+	    right: -10px;
+	    text-align: center;
+	    top: -10px;
+	    width: 20px;
+	}
+    }
+}

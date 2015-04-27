@@ -12,7 +12,7 @@
 		
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="src/jquery.nestednav.min.js"></script>
+		<script type="text/javascript" src="src/jquery.nestednav.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		
 	</head>
@@ -48,6 +48,14 @@
 									</li>
 								</ul>
 							</li>
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Linkless Dropdown <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Tomato</a></li>
+									<li><a href="#">Carrot</a></li>
+									<li><a href="#">Olive</a></li>
+                                </ul>
+                            </li>
 						</ul>
 					</div>
 				</div>
@@ -257,6 +265,13 @@ $('#selector').nestednav();
                         <td><i class="icon-ok"></i></td>
                     </tr>
                     <tr>
+                        <td><strong>nestedItemNoLinkClass</strong></td>
+                        <td>'nested-no-link'</td>
+                        <td>Used on nestedItemClass to denote there's <strong>no</strong> link, used on child <code>&lt;a&gt;</code> tag also.</td>
+                        <td><i class="icon-ok"></i></td>
+                        <td><i class="icon-ok"></i></td>
+                    </tr>
+                    <tr>
                         <td><strong>showDropdownClass</strong></td>
                         <td>'nested-dropdown-show'</td>
                         <td>Class used to transition a dropdown box into view</td>
@@ -417,6 +432,13 @@ $('#selector').nestednav();
                         <td><strong>menuCollapseWidth</strong></td>
                         <td>1000</td>
                         <td>The breakpoint in pixels to use menu</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+				    </tr>
+                    <tr>
+                        <td><strong>linklessTriggers</strong></td>
+                        <td>true</td>
+                        <td>Whether to let linkless nested-item body also trigger dropdown boxes</td>
                         <td></td>
                         <td><i class="icon-ok"></i></td>
 				    </tr>
