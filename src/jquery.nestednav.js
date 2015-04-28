@@ -22,14 +22,15 @@
 		function setHeight ( vars, timeout ) {
 			setTimeout(function(){
 
-				vars.computedHeight = vars.wrapper.outerHeight();
+				//vars.computedHeight = vars.wrapper.outerHeight();
 				if ( vars.window.width() > settings.menuCollapseWidth )
 					vars.wrapper.css('height', 'auto').hide();
 				else {
 					vars.wrapper.css('height', 'auto');
-					var docHeight = vars.document.height() - 40;
-					var height = (vars.computedHeight > docHeight) ? vars.computedHeight : docHeight;
-					vars.wrapper.css('height', height+'px');
+					
+					var docHeight = vars.document.height() - setTopOffset( vars );
+					//var height = (vars.computedHeight > docHeight) ? vars.computedHeight : docHeight;
+					vars.wrapper.css('height', docHeight+'px');
 				}
 
 			}, timeout );
@@ -40,6 +41,7 @@
 			var targetOffset = target.offset();
 			var documentOffset = targetOffset.top + target.outerHeight();
 			vars.wrapper.offset( { top: documentOffset } );
+			return documentOffset;
 		}
 
 		function makeLink ( a ) {
@@ -199,7 +201,7 @@
 							return;
 
 						if ( width < settings.menuCollapseWidth ) {
-							vars.wrapper.css('height', vars.document.height()+'px');
+							setHeight( vars, settings.setHeightInitialDelay );
 							vars.wrapper.removeClass( settings.nestedDrawerShowClass ).show();
 						} else {
 							vars.wrapper.removeClass( settings.nestedDrawerShowClass ).hide();
