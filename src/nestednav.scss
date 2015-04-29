@@ -76,6 +76,9 @@ $nested-nav-transition: all 0.5s cubic-bezier(.13,.99,.75,1.01) 0s;
     }
     &.nested-drawer-show {
 	left: 0;
+	.nested-container {
+	    left: 5%;
+	}
     }
     .nested-trans {
 	@include transition($nested-nav-transition);
@@ -117,7 +120,7 @@ $nested-nav-transition: all 0.5s cubic-bezier(.13,.99,.75,1.01) 0s;
 	color: $nested-nav-container-color;
 	background: $nested-nav-container-bg;
 	font-weight: $nested-nav-font-weight;
-	left: 5%;
+	left: 105%;
 	padding: 0;
 	position: absolute;
 	width: 90%;
@@ -135,6 +138,10 @@ $nested-nav-transition: all 0.5s cubic-bezier(.13,.99,.75,1.01) 0s;
 	    background: $nested-nav-box-title-bg;
 	    padding: $nested-nav-box-title-padding;
 	    position: relative;
+	    a {
+		color: #fff;
+		text-decoration: underline;
+	    }
 	}
 	.nested-box {
 	    background: $nested-nav-container-bg;

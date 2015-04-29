@@ -30,6 +30,9 @@
 .nested-nav.nested-drawer-show {
   left: 0;
 }
+.nested-nav.nested-drawer-show .nested-container {
+  left: 5%;
+}
 .nested-nav .nested-trans {
   -webkit-transition: all 0.5s cubic-bezier(0.13, 0.99, 0.75, 1.01) 0s;
   -moz-transition: all 0.5s cubic-bezier(0.13, 0.99, 0.75, 1.01) 0s;
@@ -71,7 +74,7 @@
   color: #eee;
   background: #c5c5c5;
   font-weight: bold;
-  left: 5%;
+  left: 105%;
   padding: 0;
   position: absolute;
   width: 90%;
@@ -90,6 +93,10 @@
   background: #999;
   padding: 10px;
   position: relative;
+}
+.nested-nav .nested-container .nested-box-title a {
+  color: #fff;
+  text-decoration: underline;
 }
 .nested-nav .nested-container .nested-box {
   background: #c5c5c5;

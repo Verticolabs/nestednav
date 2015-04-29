@@ -89,6 +89,10 @@
 				sub.attr('data-dropdown', dropID);
 				
 				html += item.html;
+				
+				if (settings.realMenuTriggers && el.parent().is(vars.mainNav) && sub.length) {
+					el.attr('data-dropdown', dropID);
+				}
 			});
 
 			var els = $(html);
@@ -108,6 +112,9 @@
 			}
 			
 			callEvent( els.find( '[data-dropdown]' ) , 'nested-caret', vars );
+			if (settings.realMenuTriggers) {
+				callEvent( vars.mainNav.children().filter( '[data-dropdown]' ) , 'nested-caret', vars );
+			}
 
 			return els;
 		}
@@ -116,14 +123,18 @@
 		function getNestedBox( caret, vars ){
 
 			var dropID = caret.attr( 'data-dropdown' );
+			
 			var subMenuTitle = vars.mainNav.find('[data-label=' + dropID + ']').text();
+			var subMenuHrefText = vars.mainNav.find('[data-label=' + dropID + ']').attr('href');
+			var subMenuTitleHtml = (subMenuHrefText === undefined || subMenuHrefText === 'javascript:void(0);') ? subMenuTitle : '<a href="' + subMenuHrefText + '">' + subMenuTitle + '</a>';
+		
 			var subMenuItems = vars.mainNav.find('[data-dropdown=' + dropID + ']').children( settings.subNavChildrenSelector );
 
 			var els = makeItems( subMenuItems, vars );
 
 			var dropWrapper = [];
 			dropWrapper.close = '<div class="' + settings.nestedBoxCloseClass + '">' + settings.nestedBoxIconHtml + '</div>';
-			dropWrapper.title = '<div class="' + settings.nestedBoxTitleClass + '">' + subMenuTitle + dropWrapper.close + '</div>';
+			dropWrapper.title = '<div class="' + settings.nestedBoxTitleClass + '">' + subMenuTitleHtml + dropWrapper.close + '</div>';
 			dropWrapper.content = '<div class="' + settings.nestedBoxClass + '"></div>';
 
 			dropWrapper.containerStart = '<div class="' + settings.nestedDropdownContainerClass + ' ' + settings.transClass + '">';
@@ -163,9 +174,22 @@
 			switch (eventType) {
 				case 'nested-caret':
 					// Makes Nested Box
-					els.click(function() {
+					els.click(function( e ) {
+						var el = $(this);
+						
+						if (el.parent().is(vars.mainNav)) {
+							
+							console.log('here');
+							if (vars.window.width() > settings.realMenuTriggerWidth) {
+								return;
+							} else {
+								e.stopImmediatePropagation();
+							}
+							
+						}
+						
 						var backdrop = $( '#' + settings.backdropID);
-						var dropdown = getNestedBox( $(this), vars );
+						var dropdown = getNestedBox( el, vars );
 						
 						// Send other dropdowns behind backdrop
 						vars.wrapper
@@ -347,7 +371,9 @@
 		
 		// Widths, Booleans, Misc
 		menuCollapseWidth: 1000,
-		linklessTriggers: true // whether linkless nav items should also trigger dropdowns.
+		linklessTriggers: true, // whether linkless nav items should also trigger dropdowns.
+		realMenuTriggers: false,
+		realMenuTriggerWidth: 1000
 	};
 
 })( jQuery );

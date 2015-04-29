@@ -442,6 +442,20 @@ $('#selector').nestednav();
                         <td></td>
                         <td><i class="icon-ok"></i></td>
 				    </tr>
+                    <tr>
+                        <td><strong>realMenuTriggers</strong></td>
+                        <td>false</td>
+                        <td>Whether the top level original navigation can also trigger dropdown boxes (ideal for tablet-view that have an original hover menu with links in top level nav)</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+				    </tr>
+                    <tr>
+                        <td><strong>realMenuTriggerWidth</strong></td>
+                        <td>1000</td>
+                        <td>When realMenuTriggers is true, this is the width maximum to allow the trigger to occur. The minimum is when the mobile menu button becomes available.</td>
+                        <td></td>
+                        <td><i class="icon-ok"></i></td>
+				    </tr>
 				</tbody>
 			    </table>
 			</div>
