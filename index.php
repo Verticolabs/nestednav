@@ -28,22 +28,22 @@
 					<a class="brand" href="http://www.verticolabs.com/">VerticoLabs</a>
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class="active"><a href="#">These</a></li>
-							<li><a href="#">Are</a></li>
+							<li class="active"><a href="/nestedNav/">These</a></li>
+							<li><a href="/nestedNav/">Are</a></li>
 							<li class="dropdown">
 								<a data-toggle="dropdown" class="dropdown-toggle" href="/nestedNav/">Boring <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Links</a></li>
-									<li><a href="#">You</a></li>
-									<li><a href="#">Should not</a></li>
-									<li><a href="#">Click</a></li>
-									<li><a href="#">Snore</a></li>
+									<li><a href="/nestedNav/">Links</a></li>
+									<li><a href="/nestedNav/">You</a></li>
+									<li><a href="/nestedNav/">Should not</a></li>
+									<li><a href="/nestedNav/">Click</a></li>
+									<li><a href="/nestedNav/">Snore</a></li>
 									<li class="dropdown-submenu">
-										<a data-toggle="dropdown" class="dropdown-toggle" href="#">Fruits <b class="caret"></b></a>
+										<a data-toggle="dropdown" class="dropdown-toggle" href="/nestedNav/">Fruits <b class="caret"></b></a>
 										<ul class="dropdown-menu">
-											<li><a href="#">Bananas</a></li>
-											<li><a href="#">Watermelons</a></li>
-											<li><a href="#">Tomatoes</a></li>
+											<li><a href="/nestedNav/">Bananas</a></li>
+											<li><a href="/nestedNav/">Watermelons</a></li>
+											<li><a href="/nestedNav/">Tomatoes</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -51,9 +51,9 @@
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Linkless Dropdown <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Tomato</a></li>
-									<li><a href="#">Carrot</a></li>
-									<li><a href="#">Olive</a></li>
+                                    <li><a href="/nestedNav/">Tomato</a></li>
+									<li><a href="/nestedNav/">Carrot</a></li>
+									<li><a href="/nestedNav/">Olive</a></li>
                                 </ul>
                             </li>
 						</ul>

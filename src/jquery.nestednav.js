@@ -372,7 +372,7 @@
 		// Widths, Booleans, Misc
 		menuCollapseWidth: 1000,
 		linklessTriggers: true, // whether linkless nav items should also trigger dropdowns.
-		realMenuTriggers: true,
+		realMenuTriggers: false,
 		realMenuTriggerWidth: 1000
 	};
 
