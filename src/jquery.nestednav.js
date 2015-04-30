@@ -179,10 +179,10 @@
 						
 						if (el.parent().is(vars.mainNav)) {
 							
-							console.log('here');
 							if (vars.window.width() > settings.realMenuTriggerWidth) {
 								return;
 							} else {
+								e.preventDefault();
 								e.stopImmediatePropagation();
 							}
 							
@@ -372,7 +372,7 @@
 		// Widths, Booleans, Misc
 		menuCollapseWidth: 1000,
 		linklessTriggers: true, // whether linkless nav items should also trigger dropdowns.
-		realMenuTriggers: false,
+		realMenuTriggers: true,
 		realMenuTriggerWidth: 1000
 	};
 

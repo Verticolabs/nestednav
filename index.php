@@ -31,7 +31,7 @@
 							<li class="active"><a href="#">These</a></li>
 							<li><a href="#">Are</a></li>
 							<li class="dropdown">
-								<a data-toggle="dropdown" class="dropdown-toggle" href="#">Boring <b class="caret"></b></a>
+								<a data-toggle="dropdown" class="dropdown-toggle" href="/nestedNav/">Boring <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">Links</a></li>
 									<li><a href="#">You</a></li>
